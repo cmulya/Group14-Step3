@@ -45,7 +45,7 @@ class TestDietOptions(unittest.TestCase):
         self.assertIsNone(self.d1.generate_vegan_meal(self.vegan1))
         self.assertIsNone(self.d1.generate_vegan_meal(self.vegan2))
         self.assertIsNone(self.d1.generate_vegan_meal(self.vegan3))
-        self.assertEqual(self.d1.generate_vegan_meal(self.str0), "Invalid protein option for a vegan diet.")
+        self.assertEqual(self.d1.generate_vegan_meal(self.str0), 'Invalid protein option for a vegan diet.')
     
     def test_generate_vegetarian_meal(self):
         self.d1.calculate_bmr()
@@ -54,7 +54,7 @@ class TestDietOptions(unittest.TestCase):
         self.assertIsNone(self.d1.generate_vegetarian_meal(self.vegetarian1))
         self.assertIsNone(self.d1.generate_vegetarian_meal(self.vegetarian2))
         self.assertIsNone(self.d1.generate_vegetarian_meal(self.vegetarian3))
-        self.assertEqual(self.d1.generate_vegetarian_meal(self.str0), "Invalid protein option for a vegetarian diet.")
+        self.assertEqual(self.d1.generate_vegetarian_meal(self.str0), 'Invalid protein option for a vegetarian diet.')
         
     def test_generate_meat_meal(self):
         self.d1.calculate_bmr()
@@ -63,6 +63,6 @@ class TestDietOptions(unittest.TestCase):
         self.assertIsNone(self.d1.generate_meat_meal(self.meat1))
         self.assertIsNone(self.d1.generate_meat_meal(self.meat2))
         self.assertIsNone(self.d1.generate_meat_meal(self.meat3))
-        self.assertEqual(self.d1.generate_meat_meal(self.str0), "Invalid protein option for a meat diet.")
+        self.assertEqual(self.d1.generate_meat_meal(self.str0), 'Invalid protein option for a meat diet.')
 
 unittest.main(argv =[''], verbosity=2, exit=False)
