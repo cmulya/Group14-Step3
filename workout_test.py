@@ -11,6 +11,9 @@ import unittest
 from fitness_diet_tracker.workout_plan import warmup
 from fitness_diet_tracker.workout_plan import workout
 
+import unittest
+from fitness_diet_tracker.workout_plan import workout
+
 class TestWorkout(unittest.TestCase):
     def setUp(self): # Setting up for the test
         self.athlete_workout_fifteen = workout.WorkOut(15, "athlete") # shortest plan

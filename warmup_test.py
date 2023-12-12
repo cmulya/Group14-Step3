@@ -10,6 +10,10 @@ sys.path.append(folder_path)
 import unittest
 from fitness_diet_tracker.workout_plan import warmup
 
+import unittest
+# from unittest.mock import patch
+from fitness_diet_tracker.workout_plan import warmup
+
 class TestWarmup(unittest.TestCase):
     def setUp(self): # Setting up for the test
         self.athlete = warmup.warmUp("athlete")
@@ -51,7 +55,7 @@ class TestWarmup(unittest.TestCase):
         self.assertIsInstance(self.body_weight.body_weight_warmup(), str)
         self.assertIsNotNone(self.body_weight.body_weight_warmup())
         self.assertNotIsInstance(self.body_weight.body_weight_warmup(), int)
-
+    
     def test_youtube_links_warmup(self):
         self.assertEqual(self.youtube_invalid_warmup.youtube_links_warmup(), None)
         

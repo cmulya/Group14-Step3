@@ -1,3 +1,11 @@
+import sys
+import os
+folder_name = 'fitness_diet_tracker'
+## Get the current working directory
+current_directory = os.getcwd()
+## Join the current directory with the folder name
+folder_path = os.path.join(current_directory, folder_name)
+sys.path.append(folder_path)
 from workout_plan.warmup import warmUp
 
 class WorkOut(warmUp):
@@ -112,19 +120,20 @@ def main():
     """
     The main function to interactively generate a workout plan based on user input.
     """
+    '''
     while True:
         try:
-            fitness_preference = input("Select a workout plan (athlete/strength/body weight): ").lower()
+            # fitness_preference = input("Select a workout plan (athlete/strength/body weight): ").lower()
             
             # Check if fitness_preference is valid
-            if fitness_preference in ["athlete", "strength", "body weight"]:
+            # if fitness_preference in ["athlete", "strength", "body weight"]:
                 while True:
                     try:
-                        fitness_time = int(input("How long do you want to train for (10-60 min): "))
+                        # fitness_time = int(input("How long do you want to train for (10-60 min): "))
                         
                         # Check if fitness_time is valid
                         if fitness_time >= 10 and fitness_time <= 60:
-                            myplan = WorkOut(fitness_time, fitness_preference)
+                            myplan = WorkOut(23, "athlete")
                             print(f'\nHere is your workout plan:\n{myplan}')
                             break  # Exit the inner loop, both inputs are valid
                         else:
@@ -140,5 +149,8 @@ def main():
                 print("Invalid fitness preference. Please enter 'athlete', 'strength', or 'body weight'.")
         except Exception as e:
             print(f'An error occurred: {e}')
+    '''
+
+    myplan = WorkOut(23, "athlete")
 
 main()
