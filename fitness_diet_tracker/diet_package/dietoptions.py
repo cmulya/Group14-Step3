@@ -9,6 +9,12 @@ sys.path.append(folder_path)
 
 from diet_package.planoptions import PlanOptions
 
+#creating a user-defined exception class
+class DietOptionsError(Exception):
+    """Custom exception for DietOptions class errors."""
+    pass
+
+
 class DietOptions(PlanOptions):
     """
     DietOptions class extends the PlanOptions class and provides methods for generating meal plans
@@ -71,8 +77,8 @@ class DietOptions(PlanOptions):
             print(f"Calorie per Serving: {recipe['calories_per_serving']} cal")
             print(f"Youtube Link: {recipe['youtube_link']}")
             print(f"Servings per Day: {servings_per_day:.2f}\n")
-        except:
-            print("An error occurred during generate_vegan_meal")
+        except DietOptionsError as e:
+            print(f"An error occurred during generate_vegan_meal: {e}")
             
     def generate_vegetarian_meal(self, protein_option):
         """
@@ -104,8 +110,8 @@ class DietOptions(PlanOptions):
             print(f"Calorie per Serving: {recipe['calories_per_serving']} cal")
             print(f"Youtube Link: {recipe['youtube_link']}")
             print(f"Servings per Day: {servings_per_day:.2f}\n")
-        except:
-            print("An error occurred during generate_vegetarian_meal")
+        except DietOptionsError as e:
+            print(f"An error occurred during generate_vegetarian_meal: {e}")
 
     def generate_meat_meal(self, protein_option):
         """
@@ -136,8 +142,8 @@ class DietOptions(PlanOptions):
             print(f"Calorie per Serving: {recipe['calories_per_serving']} cal")
             print(f"Youtube Link: {recipe['youtube_link']}")
             print(f"Servings per Day: {servings_per_day:.2f}\n")
-        except:
-            print("An error occurred during generate_meat_meal")
+        except DietOptionsError as e:
+            print(f"An error occurred during generate_meat_meal: {e}")
 
 # main function
 def main():
