@@ -42,12 +42,15 @@ class WorkOut(warmUp):
         Returns:
         - str: A string describing the intensity workout plan.
         """
-        if self.time >= 10 and self.time <= 30:
-            return f'3 sets of push press until failure\n3 sets of half squat jumps until failure\n3 sets of pull ups until failure\nAtleast 1 minute of rest between each set is recommended'
-        if self.time > 30 and self.time <= 45:
-            return f'4 sets of push press until failure\n4 sets of half squat jumps until failure\n4 sets of pull ups until failure\nAtleast 1.5 minute of rest between each set is recommended'
-        if self.time > 45 and self.time <=60:
-            return f'5 sets of push press until failure\n5 sets of half squat jumps until failure\n5 sets of pull ups until failure\nAtleast 1.5 minute of rest between each set is recommended'
+        try:
+            if self.time >= 10 and self.time <= 30:
+                return f'3 sets of push press until failure\n3 sets of half squat jumps until failure\n3 sets of pull ups until failure\nAtleast 1 minute of rest between each set is recommended'
+            if self.time > 30 and self.time <= 45:
+                return f'4 sets of push press until failure\n4 sets of half squat jumps until failure\n4 sets of pull ups until failure\nAtleast 1.5 minute of rest between each set is recommended'
+            if self.time > 45 and self.time <=60:
+                return f'5 sets of push press until failure\n5 sets of half squat jumps until failure\n5 sets of pull ups until failure\nAtleast 1.5 minute of rest between each set is recommended'
+        except:
+            print("Incorrect time input, must be 10-60")
 
     def generate_powerlifting_plan(self):
         """
@@ -56,12 +59,15 @@ class WorkOut(warmUp):
         Returns:
         - str: A string describing the powerlifting workout plan.
         """
-        if self.time >= 10 and self.time <= 30:
-            return f'2 sets of bench press until failure\n2 sets of barbell squats until failure\n2 sets of deadlifts until failure\nAtleast 2 minute of rest between each set is recommended'
-        if self.time > 30 and self.time <= 45:
-            return f'3 sets of bench press until failure\n3 sets of barbell squats until failure\n3 sets of deadlifts until failure\nAtleast 2 minute of rest between each set is recommended'
-        if self.time > 45 and self.time <=60:
-            return f'4 sets of bench press until failure\n4 sets of barbell squats until failure\n4 sets of deadlifts until failure\nAtleast 2.5 minute of rest between each set is recommended'
+        try:
+            if self.time >= 10 and self.time <= 30:
+                return f'2 sets of bench press until failure\n2 sets of barbell squats until failure\n2 sets of deadlifts until failure\nAtleast 2 minute of rest between each set is recommended'
+            if self.time > 30 and self.time <= 45:
+                return f'3 sets of bench press until failure\n3 sets of barbell squats until failure\n3 sets of deadlifts until failure\nAtleast 2 minute of rest between each set is recommended'
+            if self.time > 45 and self.time <=60:
+                return f'4 sets of bench press until failure\n4 sets of barbell squats until failure\n4 sets of deadlifts until failure\nAtleast 2.5 minute of rest between each set is recommended'
+        except:
+            print("Incorrect time input, must be 10-60")
 
     def generate_calisthenics_plan(self):
         """
@@ -70,12 +76,15 @@ class WorkOut(warmUp):
         Returns:
         - str: A string describing the calisthenics workout plan.
         """
-        if self.time >= 10 and self.time <= 30:
-            return f'3 sets of push ups until failure\n3 sets of pistol squats until failure\n3 sets of pull ups until failure\nAtleast 1 minute of rest between each set is recommended'
-        if self.time > 30 and self.time <= 45:
-            return f'4 sets of push ups until failure\n4 sets of pistol squats until failure\n4 sets of pull ups until failure\nAtleast 1.5 minute of rest between each set is recommended'
-        if self.time > 45 and self.time <=60:
-            return f'5 sets of push ups until failure\n5 sets of pistol squats until failure\n5 sets of pull ups until failure\nAtleast 1.5 minute of rest between each set is recommended'
+        try:
+            if self.time >= 10 and self.time <= 30:
+                return f'3 sets of push ups until failure\n3 sets of pistol squats until failure\n3 sets of pull ups until failure\nAtleast 1 minute of rest between each set is recommended'
+            if self.time > 30 and self.time <= 45:
+                return f'4 sets of push ups until failure\n4 sets of pistol squats until failure\n4 sets of pull ups until failure\nAtleast 1.5 minute of rest between each set is recommended'
+            if self.time > 45 and self.time <=60:
+                return f'5 sets of push ups until failure\n5 sets of pistol squats until failure\n5 sets of pull ups until failure\nAtleast 1.5 minute of rest between each set is recommended'
+        except:
+            print("Incorrect Time input, must be 10-60")
 
     def youtube_links(self):
         """
